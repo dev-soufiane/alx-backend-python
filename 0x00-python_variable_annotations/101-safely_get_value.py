@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
-"""
-Defines a function to safely retrieve a value from a dictionary.
-"""
+"""Adds type annotations to a function's parameters and return values."""
+from typing import Mapping, Any, Union, TypeVar, Optional
 
-from typing import TypeVar, Mapping, Any, Union
-
-# Define a generic type variable
 T = TypeVar('T')
 
 
 def safely_get_value(dct: Mapping, key: Any, default:
-                     T = None) -> Union[Any, T]:
+                     Optional[T] = None) -> Union[Any, T]:
     """Safely retrieves a value from a dictionary."""
     if key in dct:
         return dct[key]
